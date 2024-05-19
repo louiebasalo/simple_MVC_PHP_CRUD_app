@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 require_once "../model/services/ProductResourceService.php";
 require_once "../model/services/ProductCollectionService.php";
 class ProductController {
