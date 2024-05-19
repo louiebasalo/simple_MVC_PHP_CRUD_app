@@ -1,12 +1,18 @@
 <?php
 
-class Connection {
+class DBConnection {
 
     private $dbcon;
     private $user = "root";
     private $password = "";
     private $name = "products_db";
     private $host = "localhost";
+
+    function __construct()
+    {
+        $this->name = "products_db";
+        $this->host = "localhost";
+    }
     
     protected function open() : PDO
     {
@@ -26,7 +32,7 @@ class Connection {
 
     protected function close() : bool
     {
-        $dbcon = null;
+        $this->dbcon = null;
         return true;
     }
 

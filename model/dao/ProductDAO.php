@@ -2,16 +2,25 @@
 
 declare(strict_types=1);
 
-require_once "./DBConnection.php";
+require_once "DBConnection.php";
 
 class ProductDAO {
 
     //decided not to extend the Connection class (as per Liskov subsititution principle)
-    private Connection $pdo = new Connection();
-    private $conn = $pdo->open();
+    private $pdo;
 
-    public function insert_product(array $data) : int
+    public function __construct()
     {
+        $this->pdo = new DBConnection();
+    }
+
+    private $conn;
+    
+
+    public function insert_product(array $data) : string
+    {
+        $this->conn = $this->pdo->open();
+
         $sql = "INSERT INTO products (name, price, stocks, is_active) 
                 VALUES (:name, :price, :stocks, :is_active)";
         $stmt = $this->conn->prepare($sql);
@@ -27,6 +36,8 @@ class ProductDAO {
 
     public function select_product(int $id) : array
     {
+        $this->conn = $this->pdo->open();
+
         $sql = "SELECT * FROM products WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":id",$id, PDO::PARAM_INT);
@@ -40,6 +51,8 @@ class ProductDAO {
 
     public function get_products() : array
     {
+        $this->conn = $this->pdo->open();
+
         $sql = "SELECT * FROM products";
         $stmt = $this->conn->query($sql);
 
@@ -62,6 +75,8 @@ class ProductDAO {
 
     public function update_product(array $current, array $new): int
     {
+        $this->conn = $this->pdo->open();
+
         $sql = "UPDATE products
                 SET name = :name,
                 price = :price,
@@ -82,6 +97,8 @@ class ProductDAO {
 
     public function delete_product(int $id) : int
     {
+        $this->conn = $this->pdo->open();
+
         $sql = "DELETE FROM products WHERE id = :id";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindValue(":id", $id, PDO::PARAM_INT);
