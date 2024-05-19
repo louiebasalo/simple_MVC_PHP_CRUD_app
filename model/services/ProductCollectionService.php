@@ -1,21 +1,40 @@
 <?php
 
+declare(strict_types=1);
+
 require_once "../Product.php";
 require_once "../dao/ProductDAO.php";
 
 class ProductCollectionService {
 
     private $data;
-    public function __construct(?array $data)
+    private $method;
+    public function __construct($method, ?array $data)
     {
         $this->data = $data;
+        $this->method = $method;
     }
-    public function addProduct($data) 
+
+    public function processRequest(){
+
+        switch ($this->method){
+            case "GET":
+                return $this->getAllProducts();
+            case "POST":
+                return $this->addProduct();
+            default:
+                http_response_code(405);
+                header("Allow: GET, POST");
+
+        }
+    }
+
+    public function addProduct() 
     {
         $product = new Product();
-        $product->setName($data['name']);
-        $product->setPrice($data['price']);
-        $product->setStocks($data['stocks']);
+        $product->setName($this->data['name']);
+        $product->setPrice($this->data['price']);
+        $product->setStocks($this->data['stocks']);
 
         $dao = new ProductDAO();
         $dao->insert_product([
@@ -28,6 +47,8 @@ class ProductCollectionService {
 
     public function getAllProducts() : array
     {
+        $dao = new ProductDAO();
+        return $dao->get_products();
 
     }
 

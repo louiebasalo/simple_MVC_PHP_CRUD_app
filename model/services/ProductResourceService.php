@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 require_once "../Product.php";
 require_once "../dao/ProductDAO.php";
 
@@ -9,7 +11,7 @@ class ProductResourceService {
     private $id;
     private $data;
 
-    public function __construct(string $method, int $id, $data)
+    public function __construct(string $method, int $id, array $data)
     {
         $this->method = $method;
         $this->id = $id;
@@ -38,13 +40,16 @@ class ProductResourceService {
         return $dao->select_product($this->id);
     }
 
-    public function updateProduct() : void
+    public function updateProduct() : int
     {
-
+        $dao = new ProductDAO();
+        $current = $this->selectProduct();
+        return $dao->update_product($current, $this->data);
     }
     
-    public function deleteProduct() : void
+    public function deleteProduct() : int
     {
-        
+        $dao = new ProductDAO();
+        return $dao->delete_product($this->id);
     }
 }
