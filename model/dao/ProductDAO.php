@@ -3,6 +3,7 @@ namespace Model\Dao;
 declare(strict_types=1);
 
 use Model\Dao\DBConnection;
+use \PDO;
 
 class ProductDAO {
 

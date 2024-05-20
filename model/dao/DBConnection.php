@@ -1,5 +1,8 @@
 <?php
 namespace Model\Dao;
+use \PDO;
+use \PDOException;
+
 class DBConnection {
 
     private $dbcon;
