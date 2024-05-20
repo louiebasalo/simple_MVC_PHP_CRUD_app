@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-require_once "../model/services/ProductResourceService.php";
-require_once "../model/services/ProductCollectionService.php";
+use Model\Services\ProductResourceService;
+use Model\Services\ProductCollectionService;
 class ProductController {
 
     private $data; 

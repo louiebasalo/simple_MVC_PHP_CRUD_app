@@ -1,9 +1,11 @@
 <?php
 
+namespace Model\Services;
 declare(strict_types=1);
 
-require_once "../Product.php";
-require_once "../dao/ProductDAO.php";
+// require_once "../Product.php";
+use Model\Product;
+use Model\Dao\ProductDAO;
 
 class ProductResourceService {
 
@@ -17,6 +19,9 @@ class ProductResourceService {
         $this->id = $id;
         $this->data = $data;
     }
+
+
+    //not sure of how to make sense of using the getter and setter methods in Product class here, like in ProductCollectionService class. Just used getter and setter there for comparison.
 
     public function processRequest(){
 

@@ -1,5 +1,5 @@
 <?php
-
+namespace Model\Dao;
 class DBConnection {
 
     private $dbcon;

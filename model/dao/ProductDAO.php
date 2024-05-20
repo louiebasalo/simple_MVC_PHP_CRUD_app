@@ -1,8 +1,8 @@
 <?php
-
+namespace Model\Dao;
 declare(strict_types=1);
 
-require_once "DBConnection.php";
+use Model\Dao\DBConnection;
 
 class ProductDAO {
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Model;
+
 declare(strict_types=1);
 class Product {
 
