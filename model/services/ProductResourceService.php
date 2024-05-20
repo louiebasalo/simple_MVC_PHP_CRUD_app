@@ -1,7 +1,7 @@
 <?php
+declare(strict_types=1);
 
 namespace Model\Services;
-declare(strict_types=1);
 
 // require_once "../Product.php";
 use Model\Product;

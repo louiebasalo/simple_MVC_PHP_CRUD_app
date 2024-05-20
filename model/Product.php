@@ -1,8 +1,8 @@
 <?php
+declare(strict_types=1);
 
 namespace Model;
 
-declare(strict_types=1);
 class Product {
 
     private $id;

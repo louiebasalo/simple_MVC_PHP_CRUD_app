@@ -1,6 +1,7 @@
 <?php
-namespace Model\Dao;
 declare(strict_types=1);
+
+namespace Model\Dao;
 
 use Model\Dao\DBConnection;
 use \PDO;
