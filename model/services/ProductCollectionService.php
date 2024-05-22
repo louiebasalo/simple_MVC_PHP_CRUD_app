@@ -11,10 +11,12 @@ class ProductCollectionService {
 
     private $data;
     private $method;
-    public function __construct($method, ?array $data)
+    private $product;
+    public function __construct($method, ?array $data, $product)
     {
         $this->data = $data;
         $this->method = $method;
+        $this->product = $product;
     }
 
     public function processRequest(){
@@ -33,16 +35,11 @@ class ProductCollectionService {
 
     public function addProduct() 
     {
-        $product = new Product();
-        $product->setName($this->data['name']);
-        $product->setPrice($this->data['price']);
-        $product->setStocks($this->data['stocks']);
-
         $dao = new ProductDAO();
         $dao->insert_product([
-            $product->getName(),
-            $product->getPrice(),
-            $product->getStocks()
+            $this->product->getName(),
+            $this->product->getPrice(),
+            $this->product->getStocks()
         ]);
 
     }
