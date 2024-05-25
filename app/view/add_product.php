@@ -1,5 +1,5 @@
 <?php
-use Controller\ProductController;
+use App\Controller\ProductController;
 
 ?>
 
@@ -13,7 +13,7 @@ use Controller\ProductController;
 <body>
     <h1>Add product</h1>
     <br>
-    <form action="../Controller/ProductController.php" method="POST">
+    <form action="create_product" method="POST">
         <input type="text" name="name" /><br>
         <input type="nuumber" name="price" /><br>
         <input type="number" name="stocks" /><br>
@@ -22,3 +22,7 @@ use Controller\ProductController;
     </form>
 </body>
 </html>
+
+<?php
+var_dump($_SERVER);
+?>

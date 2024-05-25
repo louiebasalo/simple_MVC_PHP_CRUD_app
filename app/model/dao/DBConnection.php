@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Model\Dao;
+namespace App\Model\Dao;
 use \PDO;
 use \PDOException;
 

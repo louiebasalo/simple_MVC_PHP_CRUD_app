@@ -2,11 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Controller;
 
-use Model\Services\ProductResourceService;
-use Model\Services\ProductCollectionService;
-use Model\Product;
+namespace App\Controller;
+
+use App\Model\Services\ProductResourceService;
+use App\Model\Services\ProductCollectionService;
+use App\Model\Product;
+
+// var_dump($_SERVER);
+echo $_SERVER['REQUEST_METHOD']; 
+echo file_get_contents("php://input");
 class ProductController {
 
     private $data; 

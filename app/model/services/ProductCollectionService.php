@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Model\Services;
+namespace App\Model\Services;
 
 
-use Model\Product;
-use Model\Dao\ProductDAO;
+use App\Model\Product;
+use App\Model\Dao\ProductDAO;
 
 class ProductCollectionService {
 
