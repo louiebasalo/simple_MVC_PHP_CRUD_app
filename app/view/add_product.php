@@ -24,5 +24,5 @@ use App\Controller\ProductController;
 </html>
 
 <?php
-var_dump($_SERVER);
+// var_dump($_SERVER);
 ?>

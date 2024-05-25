@@ -11,7 +11,9 @@ use App\Model\Product;
 
 // var_dump($_SERVER);
 echo $_SERVER['REQUEST_METHOD']; 
-echo file_get_contents("php://input");
+echo '</br>'. file_get_contents("php://input");
+echo '</br>'.__DIR__;
+echo '</br>'.BASE_PATH;
 class ProductController {
 
     private $data; 
@@ -36,5 +38,6 @@ class ProductController {
             return $this->process->processRequest();
         }
     }
+
     
 }
