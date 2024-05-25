@@ -13,6 +13,7 @@ class DBConnection {
     private $name = "products_db";
     private $host = "localhost";
 
+    // private $dsn;
     function __construct()
     {
         $this->name = "products_db";
