@@ -2,16 +2,15 @@
 
 namespace App\Controller;
 
-require_once BASE_PATH."helper/helper.functions.php";
 use function Helper\view;
 
-
-
+echo "at PageController";
 class PageController {
 
-    public static function page($path)
+    public function page($page)
     {
-        return view($path);
+        echo "<br>page() invoked with parameter: $page";
+        return view($page);
     }
 
 }

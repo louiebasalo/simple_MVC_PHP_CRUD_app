@@ -10,6 +10,6 @@
 </head>
 <body>
     <h1>Main</h1>
-    <a href="/product/add_product">Add product</a>
+    <a href="/add-product">Add product</a>
 </body>
 </html>
