@@ -12,6 +12,7 @@ spl_autoload_register(function ($class) {
 });
 
 require base_path('routes/web.routes.php');
+require base_path('routes/api.routes.php');
 
 $route = new Route();
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];

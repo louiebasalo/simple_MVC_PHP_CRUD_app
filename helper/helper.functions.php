@@ -15,11 +15,21 @@ function view(String $path)
 
 function controller(String $controller, String $page = null)
 {
-    if($page)
+    if(is_null($page)){
+        echo "page is null.";
+    }
+    else {
+        echo "page is not null";
+    }
+
+    if(!is_null($page))
     {
         $controller = new PageController();
         return $controller->page($page);
-    }
+    }else{
     echo "code to be added here if there is no page provided.";
+    echo "</br> controller is $controller";
+        require base_path('app/controller/'.$controller.".php");
+    }
     // require_once base_path('app/controller/'.$controller.".php");
 }

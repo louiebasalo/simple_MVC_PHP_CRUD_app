@@ -10,6 +10,8 @@ use App\Model\Services\ProductCollectionService;
 use App\Model\Product;
 
 // var_dump($_SERVER);
+
+echo "</br>we are at the product controller </br>";
 echo $_SERVER['REQUEST_METHOD']; 
 echo '</br>'. file_get_contents("php://input");
 echo '</br>'.__DIR__;

@@ -47,18 +47,19 @@ class Route {
 
     }
 
+    //this is invoked in index.php
     public function route(String $uri, String $method){
         echo "<pre>";
         echo "current rquest: uri: $uri and method: $method </br>";
         echo "</pre>";
-       
+        
         foreach (self::$routes as $route)
         {
             echo "</br>".$route['uri']." == $uri";
             echo "</br>".$route['method'];
             echo "</br>".$route['controller'];
             echo "</br>".$route['page']."</br>";;
-            if ($route['uri'] == $uri && $route['method'] == $method)
+            if ($route['uri'] === $uri && $route['method'] === $method)
             {
                 return controller($route['controller'], $route['page']);
                 // return PageController::page($route['controller']);
@@ -66,4 +67,8 @@ class Route {
         }
 
     }
+
+
+   
+
 }

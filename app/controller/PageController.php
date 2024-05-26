@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use function Helper\view;
 
-echo "at PageController";
 class PageController {
 
     public function page($page)

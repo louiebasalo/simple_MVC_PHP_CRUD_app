@@ -13,7 +13,7 @@ use App\Controller\ProductController;
 <body>
     <h1>Add product</h1>
     <br>
-    <form action="create_product" method="POST">
+    <form action="/product/create" method="POST">
         <input type="text" name="name" /><br>
         <input type="nuumber" name="price" /><br>
         <input type="number" name="stocks" /><br>
