@@ -61,7 +61,8 @@ class Route {
             echo "</br>".$route['page']."</br>";;
             if ($route['uri'] === $uri && $route['method'] === $method)
             {
-                return controller($route['controller'], $route['page']);
+                echo "calling controller";
+                return controller($route['controller'], $route['page']); // I decided to use a helper function because 
                 // return PageController::page($route['controller']);
             }
         }
@@ -69,6 +70,6 @@ class Route {
     }
 
 
-   
+   //try instanciating a class and invoke its local funtion from its constructor, this way we might be able to set from the web/api.routes.php which function to be invoked for the specific route.
 
 }
