@@ -1,7 +1,7 @@
 <?php
 
 namespace Helper;
-// use App\Controller\PageController;
+use App\Controller\PageController;
 use App\Controller\ProductController;
 
 
@@ -21,9 +21,9 @@ function controller(String $controller, String $page = null)
     if(!is_null($page))
     {
         // $temp = $controller."temp";
-        require_once base_path('app/controller/'.$controller.'.php');
-        $controller_obj = new $controller(); //string value of var $controller will become the classname we instanciate in this line
-        // $controller_obj = new PageController(); // I want to remove this initialization because this not dynamic. the above commented codes supposedly works but then I am getting an error with the autloader.
+        // require_once base_path('app/controller/'.$controller.'.php');
+        // $controller_obj = new $controller(); //string value of var $controller will become the classname we instanciate in this line
+        $controller_obj = new PageController(); // I want to remove this initialization because this not dynamic. the above commented codes supposedly works but then I am getting an error with the autloader.
         return $controller_obj->page($page);
     }else{
     echo "code to be added here if there is no page provided.";
