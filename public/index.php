@@ -11,8 +11,12 @@ spl_autoload_register(function ($class) {
     echo "at index.php spl_autload_register </br>";
     echo base_path("{$class}.php") ;
 
+    echo "<br> >>>>>>>".__DIR__."/".$class.".php";
+    echo "<br> >>>>>>>".base_path("{$class}.php");
     require base_path("{$class}.php");
 });
+
+// 
 
 require base_path('routes/web.routes.php');
 require base_path('routes/api.routes.php');
@@ -27,3 +31,4 @@ $route->route($uri, $_SERVER['REQUEST_METHOD']);
 // I didnt know we can invoke a method using the string variable in php
 // $method = "route";
 // $route->$method($uri, $_SERVER['REQUEST_METHOD']); //this method is called route();
+// we can use this in the routes to specify which function to be called in the controller.

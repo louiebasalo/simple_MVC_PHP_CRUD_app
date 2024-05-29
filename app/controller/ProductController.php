@@ -16,6 +16,9 @@ echo $_SERVER['REQUEST_METHOD'];
 echo '</br>'. file_get_contents("php://input");
 echo '</br>'.__DIR__;
 echo '</br>'.BASE_PATH;
+
+
+
 class ProductController {
 
     private $data; 

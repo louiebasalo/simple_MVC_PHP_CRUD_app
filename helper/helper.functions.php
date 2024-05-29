@@ -16,6 +16,15 @@ function view(String $path)
     require_once base_path('app/view/'.$path.".php");
 }
 
+// spl_autoload_register(function ($class) {
+//     $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+//     echo "at ProductController.php spl_autload_register </br>";
+//     echo "<br> >>>>>>>>>>".base_path("{$class}.php") ;
+
+//     require base_path("{$class}.php");
+// });
+
+
 function controller(String $controller, String $page = null)
 {
     if(!is_null($page))
